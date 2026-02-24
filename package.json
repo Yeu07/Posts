@@ -1,0 +1,25 @@
+{
+  "name": "posts",
+  "version": "1.0.0",
+  "description": "a backend for social media posts",
+  "keywords": [
+    "MongoDB",
+    "NodeJs",
+    "ExpressJs"
+  ],
+  "homepage": "https://github.com/Yeu07/Posts#readme",
+  "bugs": {
+    "url": "https://github.com/Yeu07/Posts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yeu07/Posts.git"
+  },
+  "license": "ISC",
+  "author": "Yeumen Silva",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
