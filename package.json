@@ -17,10 +17,11 @@
   },
   "license": "ISC",
   "author": "Yeumen Silva",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/src/index.js",
+    "dev": "nodemon backend/src/index.js"
   },
   "dependencies": {
     "dotenv": "^17.3.1",
