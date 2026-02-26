@@ -35,7 +35,7 @@ const registerUser = async (req, res) => {
         )
 
     } catch (error) {
-        res.status(500).json({message: "Internal server error", error:error,message})
+        res.status(500).json({message: "Internal server error", error:error.message})
     }
 }
 
@@ -53,13 +53,33 @@ const loginUser = async(req,res) => {
             message: "User not found"
         });
 
-        //
+        // compare passwords
+
+        const isMatch = await user.comparePassword(password);
+
+        if(!isMatch) return res.status(400).json({
+            message: "Invalid Credentials"
+        })
+
+        res.status(200).json({
+            message: "User Logged In",
+            user:{
+                id: user._id,
+                email: user.email,
+                userName: user.userName
+            }
+        })
 
     } catch (error) {
-        
+        res.status(500).json({
+            message: "Internal server error"
+        })
     }
 }
 
+
+
 export {
-    registerUser
+    registerUser,
+    loginUser
 }
